@@ -14,7 +14,11 @@ class Users extends Controller
 
     public function register()
     {
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            print_r($_POST);
+        } else {
         $this->view('users/register');
+        }
     }
 
     public function login()
