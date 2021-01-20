@@ -9,7 +9,7 @@ class Users extends Controller
      */
     public function __construct()
     {
-        $this->usersModel = $this->model('User');
+        $usersModel = $this->model('User');
     }
 
     public function register()
