@@ -1,5 +1,6 @@
-<?php require_once APPROOT.'/views/inc/header.php'; ?>
-    <div class="row">
+<?php require_once APPROOT . '/views/inc/header.php'; ?>
+<h1>Add User</h1>
+<div class="row">
         <div class="col-md-6 mx-auto">
             <!-- form register -->
             <div class="card card-outline-secondary mt-5">
@@ -8,7 +9,7 @@
                     <p class="mt-2">Please fill the fields below to register</p>
                 </div>
                 <div class="card-body">
-                    <form class="form" role="form" method="post" action="<?php echo URLROOT.'/users/register'?>">
+                    <form class="form" role="form" method="post" action="<?php echo URLROOT . '/users/register' ?>">
                         <div class="form-group">
                             <label for="name">Name<sup>*</sup></label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Full name">
@@ -33,5 +34,4 @@
             </div>
         </div>
     </div>
-<?php require_once APPROOT.'/views/inc/footer.php'; ?>
-
+<?php require_once APPROOT . '/views/inc/footer.php'; ?>
