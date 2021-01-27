@@ -48,11 +48,24 @@ class Users extends Controller
             } else if ($data['password'] !== $data['confirm_password']) {
                 $data['confirm_password_err'] = 'Passwords do not match';
             }
-                print_r($data);
             } else {
-                $this->view('users/register');
+            $data = array(
+                'name' => '',
+                'email' => '',
+                'password' => '',
+                'confirm_password' => '',
+                'name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirm_password_error' => ''
+            );
+
+
             }
-        }
+
+        $this->view('users/register', $data);
+
+    }
 
 
             public function login()
@@ -60,6 +73,6 @@ class Users extends Controller
                 $this->view('users/login');
             }
 
-        }
+}
 
 
