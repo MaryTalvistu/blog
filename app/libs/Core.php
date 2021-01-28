@@ -3,7 +3,7 @@
 
 class Core
 { // class begin
-    protected $currentController = 'Pages';
+    protected $currentController = 'Posts';
     protected $currentMethod = 'index';
     protected $params = [];
     // constructor

@@ -100,7 +100,7 @@ class Users extends Controller
                         $loggedInUser = $this->usersModel->login($data['email'], $data['password']);
                         if ($loggedInUser) {
                             $this->createUserSession($loggedInUser);
-                            redirect('pages/index');
+                            redirect('posts/index');
                         } else {
                             $data['password_err'] = 'Password is incorrect';
                             $this->view('users/login', $data);
