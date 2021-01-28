@@ -52,7 +52,7 @@ class Database
         $this->stmt->bindParam($param, $value, $type);
     }
         public function execute(){
-            $this->stmt->execute();
+           return $this->stmt->execute();
         }
         public function getOne() {
             $this->execute();
