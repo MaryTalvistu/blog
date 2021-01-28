@@ -52,7 +52,7 @@ class Users extends Controller
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 if($this->usersModel->register($data)){
                     message('register_success', 'You are registered and now can log in');
-                    header('Location: '.URLROOT.'/'.'users/login');
+                    redirect('users/login');
                 } else {
                     die('Something went wrong');
                 }
@@ -100,7 +100,7 @@ class Users extends Controller
                         $loggedInUser = $this->usersModel->login($data['email'], $data['password']);
                         if ($loggedInUser) {
                             $this->createUserSession($loggedInUser);
-                            header('Location: ' . URLROOT . '/' . 'pages/index');
+                            redirect('pages/index');
                         } else {
                             $data['password_err'] = 'Password is incorrect';
                             $this->view('users/login', $data);
@@ -121,7 +121,7 @@ class Users extends Controller
             {
                 session_unset();
                 session_destroy();
-                header('Location: ' . URLROOT . '/' . 'users/login');
+                redirect('users/login');
             }
 
             public function createUserSession($user)
